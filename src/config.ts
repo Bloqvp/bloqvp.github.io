@@ -54,8 +54,8 @@ const siteConfig: SiteConfig = {
     title: 'BLOQ Vôlei de Praia — Links',
     description:
       'Escola de vôlei de praia desde 2002. Unidades AABB, Águas Claras e ARCEF. Fale com a gente pelo WhatsApp.',
-    canonicalUrl: 'https://bloqvp.com.br/links',
-    ogImage: 'https://bloqvp.com.br/og-image.jpg',
+    canonicalUrl: 'https://italosoousa.github.io/linktree/',
+    ogImage: 'https://italosoousa.github.io/linktree/og-image.jpg',
     twitterHandle: '@bloqvp',
   },
 };

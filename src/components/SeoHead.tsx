@@ -49,7 +49,7 @@ export default function SeoHead({ profile, meta, links }: SeoHeadProps) {
     setMeta('description', meta.description, true);
 
     // Open Graph
-    setMeta('og:type', 'profile');
+    setMeta('og:type', 'website');
     setMeta('og:title', meta.title);
     setMeta('og:description', meta.description);
     setMeta('og:url', meta.canonicalUrl);
@@ -57,7 +57,7 @@ export default function SeoHead({ profile, meta, links }: SeoHeadProps) {
     setMeta('og:locale', 'pt_BR');
 
     // Twitter Card
-    setMeta('twitter:card', 'summary', true);
+    setMeta('twitter:card', 'summary_large_image', true);
     setMeta('twitter:title', meta.title, true);
     setMeta('twitter:description', meta.description, true);
     setMeta('twitter:image', meta.ogImage ?? profile.avatarUrl, true);
