@@ -10,15 +10,15 @@ const container = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.07,
-      delayChildren: 0.2,
+      staggerChildren: 0.08,
+      delayChildren: 0.35,
     },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.3, ease: 'easeOut' } },
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } },
 };
 
 export default function LinkList({ links }: LinkListProps) {
@@ -29,7 +29,7 @@ export default function LinkList({ links }: LinkListProps) {
       variants={container}
       initial="hidden"
       animate="show"
-      className="flex w-full flex-col gap-3"
+      className="flex w-full flex-col gap-3.5"
       aria-label="Lista de links"
     >
       {links.map((link) => (

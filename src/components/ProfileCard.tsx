@@ -1,76 +1,52 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { MapPin } from 'lucide-react';
 import type { Profile } from '../types';
 
 interface ProfileCardProps {
   profile: Profile;
 }
 
-function getInitials(name: string): string {
-  return name
-    .split(' ')
-    .slice(0, 2)
-    .map((word) => word[0])
-    .join('')
-    .toUpperCase();
-}
-
 export default function ProfileCard({ profile }: ProfileCardProps) {
-  const [avatarError, setAvatarError] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   return (
-    <motion.div
+    <motion.header
       initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="flex flex-col items-center gap-4 text-center"
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className="flex flex-col items-center text-center"
     >
-      {avatarError ? (
-        <div
-          aria-label={`Foto de perfil de ${profile.name}`}
-          className="flex h-24 w-24 items-center justify-center rounded-full text-2xl font-semibold sm:h-28 sm:w-28"
-          style={{
-            backgroundColor: 'var(--color-btn)',
-            color: 'var(--color-primary)',
-            border: '3px solid var(--color-primary)',
-          }}
-        >
-          {getInitials(profile.name)}
-        </div>
-      ) : (
+      {profile.logoUrl && !logoError ? (
         <img
-          src={profile.avatarUrl}
+          src={profile.logoUrl}
           alt={profile.name}
-          width={96}
-          height={96}
-          onError={() => setAvatarError(true)}
-          className="h-24 w-24 rounded-full object-cover sm:h-28 sm:w-28"
-          style={{ border: '3px solid var(--color-primary)' }}
+          width={900}
+          height={764}
+          onError={() => setLogoError(true)}
+          className="logo-mark w-64 select-none sm:w-72"
+          draggable={false}
         />
+      ) : (
+        <h1 className="font-display text-5xl font-bold italic uppercase">{profile.name}</h1>
       )}
 
-      <div className="flex flex-col gap-1">
-        <h1
-          className="text-2xl font-semibold leading-snug"
-          style={{ color: 'var(--color-text)', letterSpacing: '-0.6px' }}
-        >
-          {profile.name}
-        </h1>
+      {profile.since && (
+        <span className="since-badge mt-6">Desde {profile.since}</span>
+      )}
 
-        <p
-          className="text-sm font-medium"
-          style={{ color: 'var(--color-primary)' }}
-        >
-          @{profile.handle}
-        </p>
+      <p className="mt-4 max-w-xs text-balance text-[15px] leading-relaxed text-white/80">{profile.bio}</p>
 
-        <p
-          className="mt-1 max-w-xs text-sm leading-relaxed"
-          style={{ color: 'var(--color-text-muted)' }}
-        >
-          {profile.bio}
-        </p>
-      </div>
-    </motion.div>
+      {profile.units && profile.units.length > 0 && (
+        <ul className="mt-4 flex flex-wrap justify-center gap-2" aria-label="Unidades">
+          {profile.units.map((unit) => (
+            <li key={unit} className="unit-chip">
+              <MapPin size={13} strokeWidth={2.25} aria-hidden="true" />
+              {unit}
+            </li>
+          ))}
+        </ul>
+      )}
+    </motion.header>
   );
 }

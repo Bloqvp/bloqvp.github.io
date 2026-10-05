@@ -1,96 +1,62 @@
 import type { SiteConfig } from './types';
 
+const WHATSAPP_NUMBER = '5561996976559';
+const WHATSAPP_MESSAGE = 'Olá! Vim pelo Instagram e quero saber mais sobre as aulas da BLOQ.';
+
 const siteConfig: SiteConfig = {
   profile: {
-    name: 'Italo Sousa',
-    handle: 'italosousa',
-    bio: 'Dev & criador de conteúdo. Construindo coisas na web.',
-    avatarUrl: '/avatar.jpg',
+    name: 'BLOQ Vôlei de Praia',
+    handle: 'bloqvp',
+    bio: 'Escola de vôlei de praia para todos os níveis.',
+    avatarUrl: `${import.meta.env.BASE_URL}avatar.jpg`,
+    logoUrl: `${import.meta.env.BASE_URL}logo-mark.png`,
+    since: '2002',
+    units: ['AABB', 'Águas Claras', 'ARCEF'],
   },
 
   links: [
     {
-      id: 'portfolio',
-      title: 'Meu Portfolio',
-      url: 'https://italosousa.dev',
-      icon: 'Globe',
+      id: 'whatsapp',
+      title: 'Fale com a gente',
+      subtitle: 'Matrículas e aula experimental',
+      url: `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`,
+      icon: 'Whatsapp',
+      ariaLabel: 'Falar com a BLOQ pelo WhatsApp',
       highlighted: true,
     },
     {
-      id: 'github',
-      title: 'GitHub',
-      url: 'https://github.com/italosousa',
-      icon: 'Github',
-    },
-    {
-      id: 'linkedin',
-      title: 'LinkedIn',
-      url: 'https://linkedin.com/in/italosousa',
-      icon: 'Linkedin',
-    },
-    {
-      id: 'youtube',
-      title: 'YouTube — Dev na Prática',
-      url: 'https://youtube.com/@italosousa',
-      icon: 'Youtube',
-    },
-    {
-      id: 'whatsapp',
-      title: 'Fale comigo no WhatsApp',
-      url: 'https://wa.me/5511999999999',
-      icon: 'MessageCircle',
-      ariaLabel: 'Enviar mensagem via WhatsApp',
-    },
-    {
-      id: 'newsletter',
-      title: 'Newsletter Semanal',
-      url: 'https://italosousa.dev/newsletter',
-      icon: 'Mail',
-    },
-  ],
-
-  socialLinks: [
-    {
-      id: 'social-github',
-      url: 'https://github.com/italosousa',
-      icon: 'Github',
-      ariaLabel: 'GitHub de Italo Sousa',
-    },
-    {
-      id: 'social-linkedin',
-      url: 'https://linkedin.com/in/italosousa',
-      icon: 'Linkedin',
-      ariaLabel: 'LinkedIn de Italo Sousa',
-    },
-    {
-      id: 'social-youtube',
-      url: 'https://youtube.com/@italosousa',
-      icon: 'Youtube',
-      ariaLabel: 'YouTube de Italo Sousa',
-    },
-    {
-      id: 'social-instagram',
-      url: 'https://instagram.com/italosousa',
+      id: 'instagram',
+      title: 'Instagram',
+      subtitle: '@bloqvp',
+      url: 'https://instagram.com/bloqvp',
       icon: 'Instagram',
-      ariaLabel: 'Instagram de Italo Sousa',
+      ariaLabel: 'Instagram da BLOQ Vôlei de Praia',
+    },
+    {
+      id: 'website',
+      title: 'Site oficial',
+      subtitle: 'bloqvp.vercel.app',
+      url: 'https://bloqvp.vercel.app/',
+      icon: 'Globe',
+      ariaLabel: 'Site oficial da BLOQ Vôlei de Praia',
     },
   ],
 
   theme: {
-    primaryColor: '#5e6ad2',
-    backgroundColor: '#010102',
-    buttonColor: '#0f1011',
-    buttonTextColor: '#f7f8f8',
-    buttonBorderRadius: '8px',
+    primaryColor: '#D4FF00',
+    backgroundColor: '#0647BF',
+    buttonColor: '#0B3DB5',
+    buttonTextColor: '#ffffff',
+    buttonBorderRadius: '18px',
   },
 
   meta: {
-    title: 'Italo Sousa — Links',
+    title: 'BLOQ Vôlei de Praia — Links',
     description:
-      'Dev & criador de conteúdo. Todos os meus links em um só lugar — portfolio, GitHub, YouTube e mais.',
-    canonicalUrl: 'https://italosousa.dev/links',
-    ogImage: 'https://italosousa.dev/og-image.jpg',
-    twitterHandle: '@italosousa',
+      'Escola de vôlei de praia desde 2002. Unidades AABB, Águas Claras e ARCEF. Fale com a gente pelo WhatsApp.',
+    canonicalUrl: 'https://bloqvp.com.br/links',
+    ogImage: 'https://bloqvp.com.br/og-image.jpg',
+    twitterHandle: '@bloqvp',
   },
 };
 

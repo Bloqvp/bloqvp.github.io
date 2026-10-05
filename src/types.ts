@@ -3,38 +3,19 @@ export interface Profile {
   handle: string;
   bio: string;
   avatarUrl: string;
+  logoUrl?: string;
+  since?: string;
+  units?: string[];
 }
 
-export type LucideIconName =
-  | 'Globe'
-  | 'Github'
-  | 'Linkedin'
-  | 'Twitter'
-  | 'Instagram'
-  | 'Youtube'
-  | 'Mail'
-  | 'Phone'
-  | 'MessageCircle'
-  | 'ShoppingBag'
-  | 'BookOpen'
-  | 'Briefcase'
-  | 'Coffee'
-  | 'Link'
-  | 'ExternalLink'
-  | 'Rss'
-  | 'Play'
-  | 'Music'
-  | 'Camera'
-  | 'Code'
-  | 'FileText'
-  | 'Twitch'
-  | 'Send';
+export type IconName = 'Whatsapp' | 'Instagram' | 'Globe';
 
 export interface LinkItem {
   id: string;
   title: string;
+  subtitle?: string;
   url: string;
-  icon: LucideIconName;
+  icon: IconName;
   ariaLabel?: string;
   highlighted?: boolean;
 }
@@ -55,17 +36,9 @@ export interface Meta {
   twitterHandle?: string;
 }
 
-export interface SocialLink {
-  id: string;
-  url: string;
-  icon: LucideIconName;
-  ariaLabel: string;
-}
-
 export interface SiteConfig {
   profile: Profile;
   links: LinkItem[];
-  socialLinks?: SocialLink[];
   theme: Theme;
   meta: Meta;
 }

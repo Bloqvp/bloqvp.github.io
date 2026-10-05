@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#CEFF00"/>
+  <text
+    x="32"
+    y="44"
+    text-anchor="middle"
+    font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
+    font-size="32"
+    font-weight="700"
+    fill="#082D8A"
+    letter-spacing="-1"
+  >BLOQ</text>
+</svg>
