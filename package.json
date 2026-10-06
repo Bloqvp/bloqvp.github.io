@@ -24,7 +24,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "predeploy": "VITE_BASE_URL=/linktree/ npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "browserslist": {
